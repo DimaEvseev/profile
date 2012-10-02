@@ -558,7 +558,7 @@ function _contorra_set_wysiwyg_settings() {
     ->execute();
 
     $wysiwyg = db_insert('wysiwyg')->fields(array(
-        'format' => 'filter_html',
+        'format' => 'filtered_html',
         'editor' => 'tinymce',
         'settings' => serialize($filter_html_wysiwyg)
     ))
