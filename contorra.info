@@ -21,6 +21,7 @@ dependencies[] = shortcut
 dependencies[] = overlay
 dependencies[] = field_ui
 dependencies[] = file
+dependencies[] = rdf
 dependencies[] = wysiwyg
 dependencies[] = imce
 dependencies[] = imce_wysiwyg
