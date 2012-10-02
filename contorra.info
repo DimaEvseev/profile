@@ -24,4 +24,7 @@ dependencies[] = file
 dependencies[] = wysiwyg
 dependencies[] = imce
 dependencies[] = imce_wysiwyg
+dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
+dependencies[] = devel
 
