@@ -57,3 +57,4 @@ dependencies[] = globalredirect
 dependencies[] = redirect
 
 dependencies[] = pathauto_settings
+dependencies[] = user_account_settings
