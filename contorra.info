@@ -53,4 +53,7 @@ dependencies[] = webform
 dependencies[] = backup_migrate
 dependencies[] = colorbox
 dependencies[] = l10n_update
+dependencies[] = globalredirect
+dependencies[] = redirect
+
 dependencies[] = pathauto_settings
