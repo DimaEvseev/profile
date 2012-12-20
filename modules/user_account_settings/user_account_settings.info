@@ -1,0 +1,11 @@
+name = User account settings
+core = 7.x
+package = Settings
+version = 7.x-1.0
+project = user_account_settings
+dependencies[] = ctools
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:1
+features[variable][] = user_cancel_method
+features[variable][] = user_register
