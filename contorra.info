@@ -52,5 +52,6 @@ dependencies[] = globalredirect
 dependencies[] = redirect
 dependencies[] = panels
 dependencies[] = panels_everywhere
+dependencies[] = module_filter
 dependencies[] = pathauto_settings
 dependencies[] = user_account_settings
