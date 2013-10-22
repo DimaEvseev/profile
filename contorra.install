@@ -253,9 +253,10 @@ function contorra_install() {
       ),
     ),
   );
-  foreach ($rdf_mappings as $rdf_mapping) {
+
+/*  foreach ($rdf_mappings as $rdf_mapping) {
     rdf_mapping_save($rdf_mapping);
-  }
+  }*/
 
   // Default "Basic page" to not be promoted and have comments disabled.
   variable_set('node_options_page', array('status'));
