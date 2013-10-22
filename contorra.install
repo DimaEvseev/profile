@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Install, update and uninstall functions for the standard install profile.
+ * Install, update and uninstall functions for the standard installation profile.
  */
 
 /**
@@ -69,7 +69,7 @@ function contorra_install() {
   filter_format_save($full_html_format);
 
   // Enable some standard blocks.
-  $default_theme = variable_get('theme_default', 'omega');
+  $default_theme = variable_get('theme_default', 'bartik');
   $admin_theme = 'seven';
   $blocks = array(
     array(
@@ -347,7 +347,6 @@ function contorra_install() {
   field_create_field($field);
 
 
-
   // Many of the following values will be defaulted, they're included here as an illustrative examples.
   // See http://api.drupal.org/api/function/field_create_instance/7
   $instance = array(
@@ -425,143 +424,143 @@ function contorra_install() {
   menu_rebuild();
 
   // Enable the admin theme.
-    db_update('system')
-        ->fields(array('status' => 1))
-        ->condition('type', 'theme')
-        ->condition('name', 'seven')
-        ->execute();
-    variable_set('admin_theme', 'seven');
-    variable_set('node_admin_theme', '1');
+  db_update('system')
+    ->fields(array('status' => 1))
+    ->condition('type', 'theme')
+    ->condition('name', 'seven')
+    ->execute();
+  variable_set('admin_theme', 'seven');
+  variable_set('node_admin_theme', '1');
 
   // Set wysiwyg settings.
   _contorra_set_wysiwyg_settings();
+
 }
 
 function _contorra_set_wysiwyg_settings() {
-    $full_html_wysiwyg = array (
-        'default' => 1,
-        'user_choose' => 0,
-        'show_toggle' => 0,
-        'theme' => 'advanced',
-        'language' => 'ru',
-        'buttons' =>
-        array (
-            'default' =>
-            array (
-                'bold' => 1,
-                'italic' => 1,
-                'underline' => 1,
-                'strikethrough' => 1,
-                'justifyleft' => 1,
-                'justifycenter' => 1,
-                'justifyright' => 1,
-                'justifyfull' => 1,
-                'bullist' => 1,
-                'numlist' => 1,
-                'outdent' => 1,
-                'indent' => 1,
-                'undo' => 1,
-                'redo' => 1,
-                'link' => 1,
-                'unlink' => 1,
-                'anchor' => 1,
-                'image' => 1,
-                'sup' => 1,
-                'sub' => 1,
-                'blockquote' => 1,
-                'hr' => 1,
-                'cut' => 1,
-                'copy' => 1,
-                'paste' => 1,
-                'removeformat' => 1,
-                'charmap' => 1,
-                'help' => 1,
-            ),
-            'emotions' =>
-            array (
-                'emotions' => 1,
-            ),
-            'font' =>
-            array (
-                'formatselect' => 1,
-                'fontselect' => 1,
-            ),
-            'fullscreen' =>
-            array (
-                'fullscreen' => 1,
-            ),
-            'paste' =>
-            array (
-                'pastetext' => 1,
-                'pasteword' => 1,
-            ),
-            'table' =>
-            array (
-                'tablecontrols' => 1,
-            ),
-            'xhtmlxtras' =>
-            array (
-                'attribs' => 1,
-            ),
-            'imce' =>
-            array (
-                'imce' => 1,
-            ),
-            'drupal' =>
-            array (
-                'break' => 1,
-            ),
-        ),
-        'toolbar_loc' => 'top',
-        'toolbar_align' => 'left',
-        'path_loc' => 'bottom',
-        'resizing' => 1,
-        'verify_html' => 1,
-        'preformatted' => 0,
-        'convert_fonts_to_spans' => 1,
-        'remove_linebreaks' => 1,
-        'apply_source_formatting' => 0,
-        'paste_auto_cleanup_on_paste' => 0,
-        'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
-        'css_setting' => 'theme',
-        'css_path' => '',
-        'css_classes' => '',
-    );
-
-    $filter_html_wysiwyg = $full_html_wysiwyg;
-
-    $filter_html_wysiwyg['buttons']['default'] = array (
+  $full_html_wysiwyg = array (
+    'default' => 1,
+    'user_choose' => 0,
+    'show_toggle' => 0,
+    'theme' => 'advanced',
+    'language' => 'ru',
+    'buttons' =>
+    array (
+      'default' =>
+      array (
         'bold' => 1,
         'italic' => 1,
         'underline' => 1,
+        'strikethrough' => 1,
+        'justifyleft' => 1,
+        'justifycenter' => 1,
+        'justifyright' => 1,
+        'justifyfull' => 1,
         'bullist' => 1,
         'numlist' => 1,
+        'outdent' => 1,
         'indent' => 1,
         'undo' => 1,
         'redo' => 1,
         'link' => 1,
         'unlink' => 1,
         'anchor' => 1,
+        'image' => 1,
+        'sup' => 1,
+        'sub' => 1,
+        'blockquote' => 1,
+        'hr' => 1,
         'cut' => 1,
         'copy' => 1,
         'paste' => 1,
         'removeformat' => 1,
         'charmap' => 1,
         'help' => 1,
-    );
+      ),
+      'emotions' =>
+      array (
+        'emotions' => 1,
+      ),
+      'font' =>
+      array (
+        'formatselect' => 1,
+        'fontselect' => 1,
+      ),
+      'fullscreen' =>
+      array (
+        'fullscreen' => 1,
+      ),
+      'paste' =>
+      array (
+        'pastetext' => 1,
+        'pasteword' => 1,
+      ),
+      'table' =>
+      array (
+        'tablecontrols' => 1,
+      ),
+      'xhtmlxtras' =>
+      array (
+        'attribs' => 1,
+      ),
+      'imce' =>
+      array (
+        'imce' => 1,
+      ),
+      'drupal' =>
+      array (
+        'break' => 1,
+      ),
+    ),
+    'toolbar_loc' => 'top',
+    'toolbar_align' => 'left',
+    'path_loc' => 'bottom',
+    'resizing' => 1,
+    'verify_html' => 1,
+    'preformatted' => 0,
+    'convert_fonts_to_spans' => 1,
+    'remove_linebreaks' => 1,
+    'apply_source_formatting' => 0,
+    'paste_auto_cleanup_on_paste' => 0,
+    'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
+    'css_setting' => 'theme',
+    'css_path' => '',
+    'css_classes' => '',
+  );
 
-    $wysiwyg = db_insert('wysiwyg')->fields(array(
-        'format' => 'full_html',
-        'editor' => 'tinymce',
-        'settings' => serialize($full_html_wysiwyg)
-    ))
+  $filter_html_wysiwyg = $full_html_wysiwyg;
+
+  $filter_html_wysiwyg['buttons']['default'] = array (
+    'bold' => 1,
+    'italic' => 1,
+    'underline' => 1,
+    'bullist' => 1,
+    'numlist' => 1,
+    'indent' => 1,
+    'undo' => 1,
+    'redo' => 1,
+    'link' => 1,
+    'unlink' => 1,
+    'anchor' => 1,
+    'cut' => 1,
+    'copy' => 1,
+    'paste' => 1,
+    'removeformat' => 1,
+    'charmap' => 1,
+    'help' => 1,
+  );
+
+  $wysiwyg = db_insert('wysiwyg')->fields(array(
+    'format' => 'full_html',
+    'editor' => 'tinymce',
+    'settings' => serialize($full_html_wysiwyg)
+  ))
     ->execute();
 
-    $wysiwyg = db_insert('wysiwyg')->fields(array(
-        'format' => 'filtered_html',
-        'editor' => 'tinymce',
-        'settings' => serialize($filter_html_wysiwyg)
-    ))
-        ->execute();
+  $wysiwyg = db_insert('wysiwyg')->fields(array(
+    'format' => 'filtered_html',
+    'editor' => 'tinymce',
+    'settings' => serialize($filter_html_wysiwyg)
+  ))
+    ->execute();
 }
-
