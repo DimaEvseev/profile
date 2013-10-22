@@ -16,6 +16,7 @@ dependencies[] = dblog
 dependencies[] = shortcut
 dependencies[] = field_ui
 dependencies[] = file
+dependencies[] = rdf
 
 ;WYSIWYG
 dependencies[] = wysiwyg
